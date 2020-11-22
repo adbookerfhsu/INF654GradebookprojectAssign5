@@ -11,11 +11,37 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
+/* Used on Login Page */
 div.headerdiv {
   height: 4em;
 }
 
+/* Used on Login Page */
+.headerp {
+  width: 200px;
+  color: #ffffff;
+  font-family: "Poppins", sans-serif;
+  font-size: 2em;
+  line-height: 90%;
+  display: inline-block;
+  text-align: center;
+  margin: 1vw auto;
+}
+
+/*Use on Login Page */
+.maindiv {
+  margin: 2em auto;
+}
+
+.maindiv p {
+  color: #ffffff;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.2em;
+  text-align: center;
+}
+
 /* Icons */
+/* fa arrow left Used on LogIn Page */
 .fa-arrow-left {
   display: inline;
   margin-top: 0;
@@ -54,23 +80,14 @@ div.headerdiv {
   margin: 2% auto;
 }
 
-.headerp {
-  width: 200px;
-  color: #ffffff;
-  font-family: "Poppins", sans-serif;
-  font-size: 2em;
-  line-height: 90%;
-  display: inline-block;
-  text-align: center;
-  margin: 1vw auto;
-}
-
+/* Used on Index Page */
 #titleimg {
   display: block;
   margin: 0 auto;
   max-width: 75%;
 }
 
+/* Used on Index Page */
 #booksimg {
   display: block;
   margin-left: auto;
@@ -85,6 +102,15 @@ div.headerdiv {
   height: 60vh;
   width: 90%;
   background: #CBE8E9;
+  /*box-shadow: 5px 5px $lightshadow;*/
+}
+
+/* Used on login page */
+.loginformbox {
+  margin: 10% auto;
+  width: 90%;
+  background: #CBE8E9;
+  font-size: 1em;
   /*box-shadow: 5px 5px $lightshadow;*/
 }
 
@@ -207,9 +233,9 @@ input {
   background: #CBE8E9;
   color: #1f5b5d;
   font-variant: small-caps;
-  font-size: 35px;
-  width: 250px;
-  height: 75px;
+  font-size: 2rem;
+  width: 75%;
+  height: 40%;
 }
 
 .button {
@@ -234,6 +260,41 @@ a {
   text-decoration: none;
 }
 
+/* Used on Login Page */
+.logIn {
+  display: block;
+  margin: auto;
+  background: #CBE8E9;
+  color: #1f5b5d;
+  font-variant: small-caps;
+  font-size: 1.5rem;
+  width: 50%;
+  height: 50%;
+}
+
+.signUp {
+  display: block;
+  margin: auto;
+  background: #CBE8E9;
+  color: #1f5b5d;
+  font-variant: small-caps;
+  font-size: 1.5rem;
+  width: 45%;
+  height: 50%;
+}
+
+.logOut {
+  display: block;
+  visibility: hidden;
+  margin: 5% auto;
+  background: #CBE8E9;
+  color: #1f5b5d;
+  font-variant: small-caps;
+  font-size: 2rem;
+  width: 45%;
+  height: 50%;
+}
+
 #thanks {
   width: 50%;
   margin: auto;
@@ -251,6 +312,7 @@ a {
   font-weight: lighter;
 }
 
+/* Used on Index Page, LogIn Page */
 footer {
   position: fixed;
   left: 0;

@@ -1,8 +1,6 @@
-(function() {
-
     //Install Firebase
     // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-    const firebaseConfig = {
+    var firebaseConfig = {
         apiKey: "AIzaSyBS2epzYcS3PlS-ftGpP1jiZqjWxQWfUAA",
         authDomain: "gb-signupsignin.firebaseapp.com",
         databaseURL: "https://gb-signupsignin.firebaseio.com",
@@ -12,34 +10,46 @@
         appId: "1:1000282152659:web:69ce8b19871768a4cefe26",
         measurementId: "G-Q8EVWMJQLX",
   };
-    // Get elements
-    const txtEmail = document.getElementById('txtEmail');
-    const txtPassword = document.getElementById('txtPassword');
-    const btnLogin = document.getElementById('btnLogin');
-
-    //Add login event
-    btnLogin.addEventListener('click', e => {
-        //Get email and pass
-        const email = txtEmail.value;
-        const password = txtPassword.value;
-        const auth = firebase.auth();
-        // Sign In
-        const promise = auth.signInWithEmailAndPassword(email, password);
-        promise.catch(e => console.log("No user account"));
-
+    // Initialize Firebase
+		  firebase.initializeApp(firebaseConfig);
+      var auth = firebase.auth();
+  
+  
+    $(document).on("submit", "#btnSignUp", function(event) {
+      event.preventDefault();
+      var promise = auth.createUserWithEmailAndPassword(
+        $("#newEmail").val(),
+        $("#newPassword").val()
+      );
+      promise.catch((e) => console.log(e.message));
     });
 
-    //Add signup event
-    btnSignUp.addEventListener('click', e => {
-        //Get email and pass
-        // TODO: Check for real email
-        const email = txtEmail.value;
-        const password = txtPassword.value;
-        const auth = firebase.auth();
-        // Sign In
-        const promise = auth.signInWithEmailAndPassword(email, password);
-        promise.catch(e => console.log("No user account"));
-
+    $(document).on("submit", "#btnLogin", function(event) {
+      event.preventDefault();
+      var promise = auth.signInWithEmailAndPassword(
+        $("#userEmail").val(),
+        $("#userPassword").val()
+      );
+      promise.catch((e) => {
+        console.log(e.message);
+                
+      });
     });
 
-}());
+    $(document).on("click", "#btnLogOut", function(event) {
+      event.preventDefault();
+      var promise = auth.signOut();
+      promise.catch((e) => console.log(e.message));
+    });
+
+    firebase.auth().onAuthStateChanged((firebaseUser) => {
+      if (firebaseUser) {
+        console.log(firebaseUser);
+        user = firebaseUser;
+        window.location.href = "studentlist.html";
+       } else {
+        user = null;
+        window.alert("You are not Logged in. Please Register or Sign In");
+        console.log("not logged in");
+      }
+    });      
