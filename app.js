@@ -1,3 +1,13 @@
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+  navigator.serviceWorker.register('sw.js').then(function(registration) {
+    console.log('Registration succesful, scope is:', registration.scope);
+  }, function(err) {
+    console.log('Service worker registration failed, error:', err);
+  });
+});
+}    
+    
     //Install Firebase
     // For Firebase JS SDK v7.20.0 and later, measurementId is optional
     var firebaseConfig = {

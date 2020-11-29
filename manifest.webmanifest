@@ -1,0 +1,20 @@
+{
+    "name": "HSGB",
+    "short_name": "Grades",
+    "description": "A simple gradebook app for Homeschoolers.",
+    "icons": [{
+        "src":"/images/bookstackbjupress192.png",
+        "type": "image/png",
+        "sizes": "192x192"
+    }, {
+        "src": "/images/bookstackbjupress512.png",
+        "type": "image/png",
+        "sizes": "512x512"
+    }],
+    "start_url": "/?source=pwa",
+    "background_color": "#1f5b5d",
+    "display": "standalone",
+    "scope": "/",
+    "theme_color": "#1f5b5d"
+}
+   
